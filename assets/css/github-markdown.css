@@ -649,7 +649,8 @@
   overflow: auto;
   font-size: 14px;
   line-height: 1.45;
-  background-color: #f6f8fa;
+  /* background-color: #f6f8fa; */
+  background-color: #282c34;
   border-radius: 3px;
 }
 
@@ -663,6 +664,7 @@
   word-wrap: normal;
   background-color: transparent;
   border: 0;
+  color: #abb2bf;
 }
 
 .markdown-body pre code::before,
@@ -733,8 +735,10 @@
 
 .markdown-body pre,
 .markdown-body pre code {
-  color: #333;
-  background: #f8f8f8;
+  /* color: #333; */
+  /* background: #f8f8f8; */
+  color: #abb2bf;
+  background-color: #282c34;
 }
 
 .markdown-body strong {

@@ -76,7 +76,7 @@
 // 高亮显示md内容样式
 import "@/assets/css/github-markdown.css"
 //引入highlight代码高亮文件
-import "@/assets/css/atom-one-light.min.css"
+import "@/assets/css/atom-one-dark.min.css"
 import "@/assets/js/highlight.js"
 export default {
     name: 'articleContent',
