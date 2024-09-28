@@ -58,17 +58,17 @@ export default {
   //配置axios
   axios: {
     proxy: true, //开启反向代理
-    prefix: "/api", //为每个请求加上前缀/api
+    prefix: "/blog_api", //为每个请求加上前缀/api
   },
   //配置反向代理
   proxy: isProduction
     ? {}
     : {
         //配置代理转发的url
-        "/api": {
+        "/blog_api": {
           target: "http://caihuaoo.xyz:4002",
           // target: process.env.NODE_ENV === 'dev' ? 'http://localhost:4000' : 'http://114.55.75.3:3000',
-          pathRewrite: { "^/api": "" }, // 代理前将 /api 前缀去除
+          pathRewrite: { "^/blog_api": "" }, // 代理前将 /api 前缀去除
         },
       },
   //配置全局路由守卫中间件
