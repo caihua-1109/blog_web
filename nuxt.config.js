@@ -73,7 +73,7 @@ export default {
       },
   //配置全局路由守卫中间件
   router: {
-    mode: "hash",
+    // mode: "hash",
   },
   //webpack配置
   build: {
