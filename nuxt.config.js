@@ -66,9 +66,9 @@ export default {
     : {
         //配置代理转发的url
         "/blog_api": {
-          target: "http://caihuaoo.xyz:4002",
+          target: "http://caihuaoo.xyz",
           // target: process.env.NODE_ENV === 'dev' ? 'http://localhost:4000' : 'http://114.55.75.3:3000',
-          pathRewrite: { "^/blog_api": "" }, // 代理前将 /api 前缀去除
+          // pathRewrite: { "^/blog_api": "" }, // 代理前将 /api 前缀去除
         },
       },
   //配置全局路由守卫中间件
