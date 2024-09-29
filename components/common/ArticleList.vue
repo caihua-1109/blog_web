@@ -4,7 +4,7 @@
     <div class="articleList">
       <div v-for="(item, i) in article" :key="i" class="time-article">
         <!-- 时间标题 -->
-        <h3>{{ item[0].date.split('-')[0] }}</h3>
+        <h3>{{ item[0]?.date.split('-')[0] }}</h3>
         <!-- 当前时间分类下的文章列表 -->
         <div class="article-all">
           <div v-for="child in item" :key="child.id" class="article-one">
