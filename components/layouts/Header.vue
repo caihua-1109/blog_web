@@ -1,6 +1,6 @@
 <!-- 布局头部区域 -->
 <template>
-    <div class="headers">
+    <div :class="{ headers: true, fixed: fixed }">
         <div class="header">
             <div class="left">
                 <nuxt-link to="/">
@@ -89,7 +89,8 @@ export default {
         return {
             isOpen: false,
             isFirst: 0,
-            isShow: false
+            isShow: false,
+            fixed: false
         }
     },
     methods: {
@@ -103,7 +104,28 @@ export default {
         name() {
             return this.$store.getters['getName']
         }
-    }
+    },
+    beforemounted() {
+        this.fixed = false
+    },
+    // mounted() {
+    //     if (window.scrollY > 0) {
+    //         this.fixed = true
+    //     }
+
+    //     this.scrollListener = () => {
+    //         if (window.scrollY > 0) {
+    //             this.fixed = true
+    //         } else {
+    //             this.fixed = false
+    //         }
+    //     }
+    //     //监听页面滚动事件
+    //     window.addEventListener('scroll', this.scrollListener);
+    // },
+    // beforeUnmount() {
+    //     window.removeEventListener('scroll', this.scrollListener)
+    // }
 }
 
 
@@ -111,7 +133,9 @@ export default {
 
 <style scoped lang='scss'>
 .headers {
-    position: relative;
+    z-index: 999;
+    top: 0;
+    position: sticky;
     padding: 0 20px 20px 20px;
 
     span {
@@ -247,5 +271,12 @@ export default {
             align-items: center;
         }
     }
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
 }
 </style>

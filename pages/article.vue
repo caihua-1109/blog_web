@@ -110,17 +110,23 @@ export default {
         }
     },
     mounted() {
-        //监听页面滚动事件
-        window.addEventListener('scroll', () => {
+
+        this.scrollListener = () => {
             if (window.scrollY > this.scroll) {
                 this.isShow = true
             } else {
                 this.isShow = false
             }
             this.scroll = window.scrollY
-        })
+        }
+        //监听页面滚动事件
+        window.addEventListener('scroll', this.scrollListener)
         //进入文章时判断文章是否已读或喜欢
         this.checkStorage()
+    },
+    beforeUnmount() {
+        // 移除滚动事件监听器
+        window.removeEventListener('scroll', this.scrollListener);
     },
     methods: {
         refreshLength() {
